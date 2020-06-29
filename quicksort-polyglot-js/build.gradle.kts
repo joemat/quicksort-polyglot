@@ -1,5 +1,5 @@
 plugins {
-    kotlin("jvm") version "1.3.72"
+    java
 }
 
 group = "de.joemat.learning.polyglot"
@@ -10,19 +10,11 @@ repositories {
 }
 
 dependencies {
+    compileOnly("org.mozilla:rhino:1.7.12")
     implementation(project(":quicksort-polyglot-api"))
-    implementation(kotlin("stdlib"))
 }
 
 configure<JavaPluginConvention> {
     sourceCompatibility = JavaVersion.VERSION_11
 }
 
-tasks {
-    compileKotlin {
-        kotlinOptions.jvmTarget = "11"
-    }
-    compileTestKotlin {
-        kotlinOptions.jvmTarget = "11"
-    }
-}

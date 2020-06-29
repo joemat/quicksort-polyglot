@@ -14,6 +14,8 @@ dependencies {
     implementation(project(":quicksort-polyglot-java"))
     implementation(project(":quicksort-polyglot-kotlin"))
     implementation(project(":quicksort-polyglot-scala"))
+    implementation(project(":quicksort-polyglot-groovy"))
+    implementation(project(":quicksort-polyglot-js"))
 
     testImplementation("org.junit.jupiter:junit-jupiter:5.6.2")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.6.2")
