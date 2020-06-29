@@ -2,13 +2,15 @@ package de.joemat.learning.quicksort_polyglot;
 
 import de.joemat.learning.quicksort_polyglot.api.Sorter;
 import de.joemat.learning.quicksort_polyglot.java.QuicksortJavaStdLib;
+import de.joemat.learning.quicksort_polyglot.kotlin.QuicksortKotlinStdLib;
 
 import java.util.Arrays;
 import java.util.List;
 
 public enum QuicksortImplementation {
 
-    JAVA_STDLIB(new QuicksortJavaStdLib());
+    JAVA_STDLIB(new QuicksortJavaStdLib()),
+    KOTLIN_STDLIB(new QuicksortKotlinStdLib());
 
     private final Sorter sorter;
 
