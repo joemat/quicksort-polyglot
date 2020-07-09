@@ -1,6 +1,7 @@
 package de.joemat.learning.quicksort_polyglot;
 
 import de.joemat.learning.quicksort_polyglot.api.Sorter;
+import de.joemat.learning.quicksort_polyglot.java.QuicksortJava;
 import de.joemat.learning.quicksort_polyglot.java.QuicksortJavaStdLib;
 import de.joemat.learning.quicksort_polyglot.kotlin.QuicksortKotlinStdLib;
 import de.joemat.learning.quicksort_polyglot.scala.QuicksortScalaStdLib;
@@ -13,6 +14,7 @@ import java.util.List;
 public enum QuicksortImplementation {
 
     JAVA_STDLIB(new QuicksortJavaStdLib()),
+    JAVA(new QuicksortJava() ),
     KOTLIN_STDLIB(new QuicksortKotlinStdLib()),
     SCALA_STDLIB(new QuicksortScalaStdLib()),
     GROOVY(new QuicksortGroovy()),
