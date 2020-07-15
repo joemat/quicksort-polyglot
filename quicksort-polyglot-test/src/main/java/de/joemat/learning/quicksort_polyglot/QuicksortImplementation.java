@@ -1,6 +1,7 @@
 package de.joemat.learning.quicksort_polyglot;
 
 import de.joemat.learning.quicksort_polyglot.api.Sorter;
+import de.joemat.learning.quicksort_polyglot.clojure.QuicksortClojure;
 import de.joemat.learning.quicksort_polyglot.java.QuicksortJava;
 import de.joemat.learning.quicksort_polyglot.java.QuicksortJavaStdLib;
 import de.joemat.learning.quicksort_polyglot.kotlin.QuicksortKotlinStdLib;
@@ -18,7 +19,8 @@ public enum QuicksortImplementation {
     KOTLIN_STDLIB(new QuicksortKotlinStdLib()),
     SCALA_STDLIB(new QuicksortScalaStdLib()),
     GROOVY(new QuicksortGroovy()),
-    JAVASCRIPT(new QuicksortJavascript());
+    JAVASCRIPT(new QuicksortJavascript()),
+    CLOJURE(new QuicksortClojure());
 
     private final Sorter sorter;
 
