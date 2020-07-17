@@ -4,6 +4,7 @@ import de.joemat.learning.quicksort_polyglot.api.Sorter;
 import de.joemat.learning.quicksort_polyglot.clojure.QuicksortClojure;
 import de.joemat.learning.quicksort_polyglot.java.QuicksortJava;
 import de.joemat.learning.quicksort_polyglot.java.QuicksortJavaStdLib;
+import de.joemat.learning.quicksort_polyglot.javascript.QuicksortJRuby;
 import de.joemat.learning.quicksort_polyglot.kotlin.QuicksortKotlinStdLib;
 import de.joemat.learning.quicksort_polyglot.scala.QuicksortScalaStdLib;
 import de.joemat.learning.quicksort_polyglot.javascript.QuicksortJavascript;
@@ -20,7 +21,8 @@ public enum QuicksortImplementation {
     SCALA_STDLIB(new QuicksortScalaStdLib()),
     GROOVY(new QuicksortGroovy()),
     JAVASCRIPT(new QuicksortJavascript()),
-    CLOJURE(new QuicksortClojure());
+    CLOJURE(new QuicksortClojure()),
+    JRUBY(new QuicksortJRuby());
 
     private final Sorter sorter;
 

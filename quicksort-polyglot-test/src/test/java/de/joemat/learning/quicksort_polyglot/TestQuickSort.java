@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertIterableEquals;
 
 public class TestQuickSort {
     public List<Integer> unsorted = Arrays.asList(10,4,9,8,7,0,6,5,1,2,3);
@@ -17,24 +17,24 @@ public class TestQuickSort {
     @ParameterizedTest
     @EnumSource(QuicksortImplementation.class)
     public void sortList(QuicksortImplementation impl) {
-        assertEquals(sorted, impl.sort(unsorted));
+        assertIterableEquals(sorted, impl.sort(unsorted));
     }
 
     @ParameterizedTest
     @EnumSource(QuicksortImplementation.class)
     public void sortListWithOneElement(QuicksortImplementation impl) {
-        assertEquals(Arrays.asList( 5 ), impl.sort(Arrays.asList( 5 )));
+        assertIterableEquals(Collections.singletonList(5), impl.sort(Collections.singletonList(5)));
     }
 
     @ParameterizedTest
     @EnumSource(QuicksortImplementation.class)
     public void sortListWithSameElements(QuicksortImplementation impl) {
-        assertEquals(Arrays.asList( 5, 5 ), impl.sort(Arrays.asList( 5, 5 )));
+        assertIterableEquals(Arrays.asList( 5, 5 ), impl.sort(Arrays.asList( 5, 5 )));
     }
 
     @ParameterizedTest
     @EnumSource(QuicksortImplementation.class)
     public void sortListEmtpyList(QuicksortImplementation impl) {
-        assertEquals( Collections.emptyList(), impl.sort(Collections.emptyList()));
+        assertIterableEquals(Collections.emptyList(), impl.sort(Collections.emptyList()));
     }
 }
