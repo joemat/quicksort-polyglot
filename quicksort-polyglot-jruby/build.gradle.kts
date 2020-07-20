@@ -11,6 +11,7 @@ repositories {
 
 dependencies {
     implementation(project(":quicksort-polyglot-api"))
+    implementation(project(":quicksort-polyglot-scripted-factory"))
     implementation("org.jruby:jruby:9.2.12.0")
 }
 

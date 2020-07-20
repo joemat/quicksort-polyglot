@@ -15,6 +15,6 @@ configure<JavaPluginConvention> {
 }
 
 dependencies {
-    implementation("org.codehaus.groovy:groovy-all:3.0.3")
     implementation(project(":quicksort-polyglot-api"))
+    implementation("org.codehaus.groovy:groovy-all:3.0.3")
 }
