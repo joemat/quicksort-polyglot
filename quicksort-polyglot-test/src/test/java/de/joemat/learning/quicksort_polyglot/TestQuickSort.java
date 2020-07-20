@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertIterableEquals;
 
 public class TestQuickSort {
@@ -18,6 +19,14 @@ public class TestQuickSort {
     @EnumSource(QuicksortImplementation.class)
     public void sortList(QuicksortImplementation impl) {
         assertIterableEquals(sorted, impl.sort(unsorted));
+    }
+
+    @ParameterizedTest
+    @EnumSource(QuicksortImplementation.class)
+    public void ensureCallbackIsCalled(QuicksortImplementation impl) {
+        impl.resetCallbackCounter();
+        assertIterableEquals(sorted, impl.sort(unsorted));
+        assertEquals(1, impl.getCallbackCounter());
     }
 
     @ParameterizedTest

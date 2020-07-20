@@ -10,9 +10,11 @@ import de.joemat.learning.quicksort_polyglot.kotlin.QuicksortKotlin;
 import de.joemat.learning.quicksort_polyglot.kotlin.QuicksortKotlinStdLib;
 import de.joemat.learning.quicksort_polyglot.scala.QuicksortScalaStdLib;
 import de.joemat.learning.quicksort_polyglot.groovy.QuicksortGroovy;
+import org.w3c.dom.css.Counter;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public enum QuicksortImplementation {
 
@@ -30,6 +32,7 @@ public enum QuicksortImplementation {
     JRUBY(QuicksortJRubyFactory.build());
 
     private final Sorter sorter;
+    private final AtomicInteger callbackCounter = new AtomicInteger(0);
 
     QuicksortImplementation(Sorter sortFunction) {
         this.sorter = sortFunction;
@@ -41,5 +44,14 @@ public enum QuicksortImplementation {
 
     public void printResult(List<Integer> resultList) {
         System.out.println(name() + " => " + Arrays.toString(resultList.toArray()));
+        callbackCounter.incrementAndGet();
+    }
+
+    public void resetCallbackCounter() {
+        callbackCounter.set(0);
+    }
+
+    public int getCallbackCounter() {
+        return callbackCounter.get();
     }
 }
