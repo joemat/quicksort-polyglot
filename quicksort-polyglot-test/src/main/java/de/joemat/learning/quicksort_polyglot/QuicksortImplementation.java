@@ -1,14 +1,14 @@
 package de.joemat.learning.quicksort_polyglot;
 
+import de.joemat.learning.quicksort_polyglot.clojure.QuicksortClojureFactory;
+import de.joemat.learning.quicksort_polyglot.javascript.QuicksortJavascriptFactory;
+import de.joemat.learning.quicksort_polyglot.jruby.QuicksortJRubyFactory;
 import de.joemat.learning.quicksort_polyglot.api.Sorter;
-import de.joemat.learning.quicksort_polyglot.clojure.QuicksortClojure;
 import de.joemat.learning.quicksort_polyglot.java.QuicksortJava;
 import de.joemat.learning.quicksort_polyglot.java.QuicksortJavaStdLib;
-import de.joemat.learning.quicksort_polyglot.javascript.QuicksortJRuby;
 import de.joemat.learning.quicksort_polyglot.kotlin.QuicksortKotlin;
 import de.joemat.learning.quicksort_polyglot.kotlin.QuicksortKotlinStdLib;
 import de.joemat.learning.quicksort_polyglot.scala.QuicksortScalaStdLib;
-import de.joemat.learning.quicksort_polyglot.javascript.QuicksortJavascript;
 import de.joemat.learning.quicksort_polyglot.groovy.QuicksortGroovy;
 
 import java.util.Arrays;
@@ -16,15 +16,18 @@ import java.util.List;
 
 public enum QuicksortImplementation {
 
+    // Languages compiling to .class files
     JAVA_STDLIB(new QuicksortJavaStdLib()),
     JAVA(new QuicksortJava() ),
     KOTLIN_STDLIB(new QuicksortKotlinStdLib()),
     KOTLIN(new QuicksortKotlin()),
     SCALA_STDLIB(new QuicksortScalaStdLib()),
     GROOVY(new QuicksortGroovy()),
-    JAVASCRIPT(new QuicksortJavascript()),
-    CLOJURE(new QuicksortClojure()),
-    JRUBY(new QuicksortJRuby());
+
+    // Language using a script interface
+    JAVASCRIPT(QuicksortJavascriptFactory.build()),
+    CLOJURE(QuicksortClojureFactory.build()),
+    JRUBY(QuicksortJRubyFactory.build());
 
     private final Sorter sorter;
 

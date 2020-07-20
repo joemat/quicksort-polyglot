@@ -9,13 +9,12 @@ repositories {
     mavenCentral()
 }
 
-dependencies {
-    compileOnly("org.mozilla:rhino:1.7.12")
-    implementation(project(":quicksort-polyglot-api"))
-    implementation(project(":quicksort-polyglot-scripted-factory"))
-}
-
 configure<JavaPluginConvention> {
     sourceCompatibility = JavaVersion.VERSION_11
 }
 
+dependencies {
+    implementation(project(":quicksort-polyglot-api"))
+    compileOnly ("org.projectlombok:lombok:1.18.12")
+    annotationProcessor ("org.projectlombok:lombok:1.18.12")
+}
