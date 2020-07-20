@@ -3,8 +3,7 @@
 This is my personal project to learn how to 
 integrate different languages with Java.
 
-The API interface [Sorter](quicksort-polyglot-api/src/main/java/de/joemat/learning/quicksort_polyglot/api/Sorter.java).
-is to be implemented in different languages.
+The API interface [Sorter](quicksort-polyglot-api/src/main/java/de/joemat/learning/quicksort_polyglot/api/Sorter.java) is to be implemented in different languages.
 
 The interface is build in a way that data is passed to the implementation and back to Java.
 It also passes a callback implementation that is supposed to be called by the implementation
