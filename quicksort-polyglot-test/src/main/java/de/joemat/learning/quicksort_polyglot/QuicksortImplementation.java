@@ -8,9 +8,9 @@ import de.joemat.learning.quicksort_polyglot.java.QuicksortJava;
 import de.joemat.learning.quicksort_polyglot.java.QuicksortJavaStdLib;
 import de.joemat.learning.quicksort_polyglot.kotlin.QuicksortKotlin;
 import de.joemat.learning.quicksort_polyglot.kotlin.QuicksortKotlinStdLib;
+import de.joemat.learning.quicksort_polyglot.scala.QuicksortScala;
 import de.joemat.learning.quicksort_polyglot.scala.QuicksortScalaStdLib;
 import de.joemat.learning.quicksort_polyglot.groovy.QuicksortGroovy;
-import org.w3c.dom.css.Counter;
 
 import java.util.Arrays;
 import java.util.List;
@@ -24,6 +24,7 @@ public enum QuicksortImplementation {
     KOTLIN_STDLIB(new QuicksortKotlinStdLib()),
     KOTLIN(new QuicksortKotlin()),
     SCALA_STDLIB(new QuicksortScalaStdLib()),
+    SCALA(new QuicksortScala()),
     GROOVY(new QuicksortGroovy()),
 
     // Language using a script interface
