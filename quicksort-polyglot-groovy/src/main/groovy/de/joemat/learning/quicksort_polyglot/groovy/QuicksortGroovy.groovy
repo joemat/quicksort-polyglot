@@ -19,8 +19,22 @@ class QuicksortGroovy implements Sorter {
         }
         def pivot = unsorted.first()
         def remaining = unsorted.tail()
-        def lower = remaining.findAll { it < pivot }
-        def greaterEquals = remaining.findAll { it >= pivot }
+
+        List<Integer> lower, greaterEquals
+        (lower, greaterEquals) = partition(remaining, pivot)
         return quicksort(lower) + pivot + quicksort(greaterEquals)
+    }
+
+    private Tuple2<List<Integer>, List<Integer>> partition(List<Integer> unsorted, Integer pivot) {
+        def lower = []
+        def greaterEquals = []
+
+        unsorted.forEach{if (it < pivot ) {
+            lower.add(it)
+        } else {
+            greaterEquals.add(it)
+        }}
+
+        Tuple2.of(lower, greaterEquals)
     }
 }

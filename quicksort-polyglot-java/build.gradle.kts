@@ -15,4 +15,5 @@ configure<JavaPluginConvention> {
 
 dependencies {
     implementation(project(":quicksort-polyglot-api"))
+    implementation("org.javatuples:javatuples:1.2")
 }
