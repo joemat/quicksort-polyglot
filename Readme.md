@@ -1,5 +1,7 @@
 # Quicksort polyglot
 
+![Build with Gradle](https://github.com/joemat/quicksort-polyglot/workflows/Java%20CI%20with%20Gradle/badge.svg)
+
 This is my personal project to learn how to 
 integrate different languages with Java.
 
@@ -16,6 +18,4 @@ Just add your implementation to the [QuicksortImplementation enum](quicksort-pol
 to add it to the test suite.
 
 I also use it as a skeleton for katas - playing around with different languages and learn how they interact.
-
-![Build with Gradle](https://github.com/joemat/quicksort-polyglot/workflows/Java%20CI%20with%20Gradle/badge.svg)
 
